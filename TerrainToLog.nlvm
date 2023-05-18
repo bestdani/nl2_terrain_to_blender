@@ -1,0 +1,35 @@
+import com.nolimitscoaster.*;
+
+public class TerrainToLog{	
+	
+	public static void main(){
+		Park park = NoLimits.getEditor().getPark();
+		if(park == null){
+			System.err.println("no park opened");
+			return;
+		}
+		int width = park.getTerrainVertexDimX();
+		int height = park.getTerrainVertexDimY();
+		float[][] terrainHeights = new float[width][height];
+		park.getTerrainHeightsAtVertices(
+			0, 0, width, height, 0, 0, terrainHeights);
+		
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		System.out.println("###TERRAIN DATA###");
+		float[] column;
+		int x = 0;
+		int y = 0;
+		for(x = 0; x < width; ++x){
+			column = terrainHeights[x];
+			for(y = 0; y < height; ++y){
+				stringBuilder.append(column[y]);
+				stringBuilder.append(';');
+			}
+			System.out.println(stringBuilder.toString());
+			stringBuilder = new StringBuilder();
+		}
+		System.out.println("###TERRAIN DATA###");
+		System.err.println("finished");
+	}
+}

@@ -1,0 +1,5 @@
+*.idea
+*.iml
+*.vscode
+
+*.nl2park_backup

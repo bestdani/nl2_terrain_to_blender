@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <script>
+    <description>Writes nl2 terrain data into the log file</description>
+    <preview>terrain to log.jpg</preview>
+    <class>TerrainToLog</class>
+    <sharedvm>true</sharedvm>
+  </script>
+</root>
