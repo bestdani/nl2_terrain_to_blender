@@ -105,7 +105,7 @@ def create_object_from_data(data):
     for face in mesh.polygons:
         face.use_smooth = True
     obj = bpy.data.objects.new('nl2terrain', mesh)
-    bpy.context.scene.objects.link(obj)
+    bpy.context.collection.objects.link(obj)
 
 
 def run_in_blender():
